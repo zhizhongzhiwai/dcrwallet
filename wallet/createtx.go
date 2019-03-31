@@ -649,7 +649,7 @@ func (w *Wallet) compressWalletInternal(op errors.Op, dbtx walletdb.ReadWriteTx,
 		return nil, errors.E(op, err)
 	}
 
-	if len(eligible) <= 1 {
+	if len(eligible) < 1 {
 		return nil, errors.E(op, "too few outputs to consolidate")
 	}
 
